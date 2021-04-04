@@ -1,0 +1,20 @@
+version: "3"
+services:
+  localstack:
+    container_name: localstack
+    image: localstack/localstack:0.10.9
+    ports:
+      - 8080:8080
+      - 4566-4597:4566-4597
+    environment:
+      - DEFAULT_REGION=us-east-1
+      - SERVICES=s3
+      - AWS_ACCESS_KEY_ID=xxx
+      - AWS_SECRET_ACCESS_KEY=xxx
+  glue:
+    container_name: glue
+    build: .
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=hoge
+      - AWS_SECRET_ACCESS_KEY=hoge
