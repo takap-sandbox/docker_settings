@@ -9,8 +9,8 @@ services:
     environment:
       - DEFAULT_REGION=us-east-1
       - SERVICES=s3
-      - AWS_ACCESS_KEY_ID=xxx
-      - AWS_SECRET_ACCESS_KEY=xxx
+      - AWS_ACCESS_KEY_ID=hoge
+      - AWS_SECRET_ACCESS_KEY=hoge
   glue:
     container_name: glue
     build: .
