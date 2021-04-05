@@ -9,12 +9,16 @@ services:
     environment:
       - DEFAULT_REGION=us-east-1
       - SERVICES=s3
+      - AWS_REGION=us-east-1
       - AWS_ACCESS_KEY_ID=hoge
       - AWS_SECRET_ACCESS_KEY=hoge
   glue:
     container_name: glue
     build: .
+    volumes:
+    - ./share:/share
     environment:
       - AWS_DEFAULT_REGION=us-east-1
+      - AWS_REGION=us-east-1
       - AWS_ACCESS_KEY_ID=hoge
       - AWS_SECRET_ACCESS_KEY=hoge
